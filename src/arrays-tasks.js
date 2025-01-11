@@ -40,7 +40,7 @@ function getIntervalArray(start, end) {
 function sumArrays(arr1, arr2) {
   const maxLength = Math.max(arr1.length, arr2.length);
   const fillArr = Array(maxLength).fill(0);
-  const resultArr = fillArr.map(function (item, i) {
+  const resultArr = fillArr.map(function sumItems(item, i) {
     return (arr1[i] || 0) + (arr2[i] || 0);
   });
   return resultArr;
