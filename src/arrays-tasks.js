@@ -444,8 +444,17 @@ function getIdentityMatrix(/* n */) {
  *    getIndicesOfOddNumbers([2, 4, 6, 8, 10]) => []
  *    getIndicesOfOddNumbers([11, 22, 33, 44, 55]) => [0, 2, 4]
  */
-function getIndicesOfOddNumbers(/* numbers */) {
-  throw new Error('Not implemented');
+function getIndicesOfOddNumbers(numbers) {
+  function recurse(i, oddIndices) {
+    if (i >= numbers.length) {
+      return oddIndices;
+    }
+    if (Math.abs(numbers[i]) % 2 === 1) {
+      oddIndices.push(i);
+    }
+    return recurse(i + 1, oddIndices);
+  }
+  return recurse(0, []);
 }
 
 /**
